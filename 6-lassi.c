@@ -1,5 +1,5 @@
 //C Struct for Mother Dairy Lassi
-//Notice multiple ways of initializing a struct & struct pointer variable here
+//Observe multiple ways of initializing a struct & struct pointer variable here
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
