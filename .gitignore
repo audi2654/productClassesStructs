@@ -11,3 +11,4 @@
 
 #other files
 *.txt
+.vscode/settings.json
