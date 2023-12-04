@@ -28,11 +28,36 @@ class productProps{
         {
 
         }
+
+        friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource)
+        {
+            std::cout << resource.fHeight << "x" << resource.fLength << "x" << resource.fWidth;
+
+            return os;
+        }
+        
     } dimensionsOfProduct;
 
 
     public:
-    class Date;
+    class Date{
+        private:
+        unsigned short usDay;
+        const char* pcMonth;
+        unsigned short usYear;
+
+        public:
+        Date(unsigned short _d = 0, const char* _m = "empty", unsigned short _y = 0000)
+        :   usDay(_d), pcMonth(_m), usYear(_y)
+        {
+
+        }
+
+        friend std::ostream& operator<<(std::ostream& os, const Date& resource);
+
+    } dateFirstAvailable{0, "empty", 0};
+
+    friend std::ostream& operator<<(std::ostream& os, const Date& resource);
 
     //default constr
     productProps()
@@ -67,6 +92,8 @@ class productProps{
         float _fCustomerRatings
     );
     void showProductDetails();
+
+    const char* cYesOrNo(const bool& member) const;
 };
 
 int main(void){
@@ -96,20 +123,6 @@ int main(void){
 }
 
 //definitions
-class productProps::Date{
-    private:
-    unsigned short usDay;
-    const char* pcMonth;
-    unsigned short usYear;
-
-    public:
-    Date(unsigned short _d = 0, const char* _m = "empty", unsigned short _y = 0000)
-    :   usDay(_d), pcMonth(_m), usYear(_y)
-    {
-
-    }
-} dateFirstAvailable;
-
 struct productProps::allYesOrNoProps{
     bool bBatteriesIncluded;
     bool bBatteriesRequired;
@@ -150,4 +163,38 @@ void productProps::setProductDetails
     uiWeight = _uiWeight;
     pcCountryOfOrigin = _pcCountryOfOrigin;
     fCustomerRatings = _fCustomerRatings;
+}
+
+void productProps::showProductDetails()
+{
+    std::cout << "Product Details for Headphones are:" << std::endl;
+
+    std::cout << pcName << std::endl;
+    std::cout << uiPrice << std::endl;
+    std::cout << usGsmFrequency << std::endl;
+    std::cout << pcModelName << std::endl;
+    std::cout << uiWeight << std::endl;
+    std::cout << pcCountryOfOrigin << std::endl;
+    std::cout << fCustomerRatings << std::endl;
+    std::cout << cYesOrNo(bAllYesOrNoProps.bBatteriesIncluded) << std::endl;
+    std::cout << cYesOrNo(bAllYesOrNoProps.bBatteriesRequired) << std::endl;
+    std::cout << cYesOrNo(bAllYesOrNoProps.bContainsLiquid) << std::endl;
+    std::cout << cYesOrNo(bAllYesOrNoProps.bAcAdaptor) << std::endl;
+    std::cout << cYesOrNo(bAllYesOrNoProps.bIncludesRemote) << std::endl;
+    std::cout << dimensionsOfProduct << std::endl;
+    std::cout << dateFirstAvailable << std::endl;
+}
+
+const char* productProps::cYesOrNo(const bool& member) const
+{
+    if(member == YES)
+        return "YES";
+    return "NO";
+}
+
+std::ostream& operator<<(std::ostream& os, const productProps::Date& resource)
+{
+    std::cout << resource.usDay << "-" << resource.pcMonth << "-" << resource.usYear;
+
+    return os;
 }
