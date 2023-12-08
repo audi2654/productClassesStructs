@@ -57,8 +57,6 @@ class productProps{
 
     } dateFirstAvailable{0, "empty", 0};
 
-    friend std::ostream& operator<<(std::ostream& os, const Date& resource);
-
     //default constr
     productProps()
     :   pcName{"empty_name"},
