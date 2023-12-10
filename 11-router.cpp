@@ -184,6 +184,7 @@ std::ostream& operator<<(std::ostream& os, const productProps::Dimensions& resou
 std::ostream& operator<<(std::ostream& os, productProps::Date& resource)
 {
     std::cout << resource.usDay << "-" << resource.pcMonth << "-" << resource.usYear;
+    //std::cout << resource.productProps::Date::usDay << "-" << resource.productProps::Date::pcMonth << "-" << resource.productProps::Date::usYear;
 
     return os;
 }
