@@ -3,7 +3,7 @@
 #include "weighingMachine_interface.hpp"
 
 int main(void){
-    WeighingMachine newMachine = new WeighingMachine;
+    ProductProps::WeighingMachine* newMachine = new ProductProps::WeighingMachine;
 
     newMachine->showMachineDetails();
 
