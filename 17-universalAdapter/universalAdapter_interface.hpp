@@ -25,11 +25,15 @@ namespace productProps{
             Dimensions();
             Dimensions(float _l, float _w, float _h);
 
-            friend std::ostream& operator<<(std::ostream& os, Dimensions& resource);
+            float getLength() const { return fLength; };
+            float getWidth() const{ return fWidth; };
+            float getHeight() const{ return fHeight; };
+
+            //friend std::ostream& operator<<(std::ostream& os, Dimensions& resource);
         } dimensionsOfProduct;
 
         public:
-        friend std::ostream& operator<<(std::ostream& os, UniversalAdapter::Dimensions& resource);
+        friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource);
 
         class Date{
             private:

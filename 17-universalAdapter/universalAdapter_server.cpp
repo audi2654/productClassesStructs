@@ -12,12 +12,15 @@
     //parameterised constr
 }
 
-std::ostream& operator<<(std::ostream& os, const ::productProps::UniversalAdapter::Dimensions& resource){
-    std::cout << resource.fLength << "x" 
-              << resource.fWidth << "x" 
-              << resource.fHeight;
-    return os;
+namespace productProps{
+    std::ostream& operator<<(std::ostream& os, const ::productProps::UniversalAdapter::Dimensions& resource){
+        std::cout   << resource.getLength() << "x" 
+                    << resource.getWidth() << "x" 
+                    << resource.getHeight();
+        return os;
+    }
 }
+
 
 productProps::UniversalAdapter::Date::Date(){
     //default constructor
@@ -29,11 +32,13 @@ productProps::UniversalAdapter::Date::Date(unsigned short _d, std::string _m, un
     //parameterised constr
 }
 
-std::ostream& operator<<(std::ostream& os, const productProps::UniversalAdapter::Date& resource){
-    std::cout << resource.usDay << "-" 
-              << resource.sMonth << "-" 
-              << resource.usYear;
-    return os;
+namespace productProps{
+    std::ostream& operator<<(std::ostream& os, const productProps::UniversalAdapter::Date& resource){
+        std::cout   << resource.usDay << "-" 
+                    << resource.sMonth << "-" 
+                    << resource.usYear;
+        return os;
+    }
 }
 
 ::productProps::UniversalAdapter::UniversalAdapter()
