@@ -22,6 +22,7 @@ namespace Mug{
             float getWidth() const;
             float getHeight() const;
 
+            //declaring friend here doesn't work in this private scenario
             //friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource);
             
         };
@@ -31,6 +32,7 @@ namespace Mug{
         Dimensions dimensionsOfProduct;
 
         public:
+        //declare friend for private Dimensions here
         friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource);
 
         typedef enum Shape
