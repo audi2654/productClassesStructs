@@ -11,12 +11,15 @@ int main(void){
     (
         "LG Display",
         24990,
-        27,
-        
-
-        {1080, 1920},
+        "Black",
+        2,
+        240,
+        true,
+        8,
+        4.3,
+        {12, "April", 2023},
         {1.2, 1.3, 1.4},
-        {12, "April", 2023}
+        {1080, 1920}
     );
     
     newDisplay->showDetails();
