@@ -22,12 +22,19 @@ namespace ProductProps{
             Dimensions();
             Dimensions(float _l, float _w, float _h);
 
+            //accessor or getter function to retrieve the data of the protected members
             float getLength() const;
             float getWidth() const;
             float getHeight() const;
 
-            //declaring friend here doesn't work in this private scenario
-            //friend std::ostream& operator<<(std::ostream& os, WeighingMachine::Dimensions& resource);
+            //different scenarios while writing friend function for extraction operator overloading for a private nested class
+            
+            //Scenario 1 - if you overload operator<<() in public space under outer class, you no need to declare any friend function in nested class as declared below
+            //but in that case you'll have to define accessor or getter functions to get private data
+
+            //Scenario 2 - you don't want to use accessor or getter functions
+            //Declare friend for overloading operator<<() under nested class's public space as well as outer class's public space
+            friend std::ostream& operator<<(std::ostream& os, WeighingMachine::Dimensions& resource);
         } dimensionOfProduct;
         
 
@@ -53,6 +60,8 @@ namespace ProductProps{
             unsigned short getYear() const;
 
         } dateFirstAvailable;
+
+        friend std::ostream& operator<<(std::ostream& os, const ::ProductProps::WeighingMachine::Date& resource);
 
         WeighingMachine();
 

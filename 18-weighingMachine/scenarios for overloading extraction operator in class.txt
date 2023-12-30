@@ -1,0 +1,10 @@
+Different scenarios while writing friend function for extraction operator overloading for a PRIVATE NESTED CLASS case
+            
+Scenario 1
+    -if you overload operator<<() in public space under outer class, you no need to declare any friend function in the nested class
+    -but in that case you'll have to define accessor or getter functions to get private data
+
+Scenario 2
+    -you don't want to use accessor or getter functions then,
+    -declare friend for overloading operator<<() under nested class's public space as well as outer class's public space
+    

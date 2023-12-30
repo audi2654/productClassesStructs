@@ -5,7 +5,7 @@
 ::ProductProps::WeighingMachine::WeighingMachine()
 :   sName{"name"},
     uiPrice{0},
-    sColor{"colot"},
+    sColor{"color"},
     sDisplayType{"type"},
     fCustomerRatings{0},
     usWeight{0},
@@ -111,15 +111,24 @@ namespace ProductProps
 {
     std::ostream& operator<<(std::ostream& os, ::ProductProps::WeighingMachine::Dimensions& resource)
     {
-        //os << resource.fLength << "x" << resource.fWidth << "x" << resource.fHeight;    // error : declared private here
+        //Scenario 1 : Declaring friend for operator<< only in outer class's public space 
+        //so you then also need to define accessor or getter functions
         os << resource.getLength() << "x" << resource.getWidth() << "x" << resource.getHeight();    // accessing public methods from Dimensions
+
+        std::cout << " ";
+
+        //Scenario 2 : Declaring friend for operator<< at 2 places inside nested class as well as outer class, both in public
+        os << resource.fLength << "x" << resource.fWidth << "x" << resource.fHeight;
 
         return os;
     };
 
     std::ostream& operator<<(std::ostream& os, const ::ProductProps::WeighingMachine::Date& resource)
     {
-        //std::cout << resource.usDay << "-" << resource.sMonth << "-" << resource.usYear; // error : declared private here
+        std::cout << resource.usDay << "-" << resource.sMonth << "-" << resource.usYear;
+        
+        std::cout << " ";
+
         std::cout << resource.getDay() << "-" << resource.getMonth() << "-" << resource.getYear();    // accessing public methods from Date
 
         return os;
