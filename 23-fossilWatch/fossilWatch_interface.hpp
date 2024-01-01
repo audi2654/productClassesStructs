@@ -26,7 +26,7 @@ namespace ProductProps{
                 unsigned short usYear;
 
                 public:
-                Date();
+                //Date();
                 Date(unsigned short _d, std::string _m, unsigned short _y);
 
                 unsigned short getDay() const;
@@ -37,7 +37,7 @@ namespace ProductProps{
             };
 
             
-            Dimensions();
+            //Dimensions();
             Dimensions(float _l, float _w, float _h);
 
             friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource);

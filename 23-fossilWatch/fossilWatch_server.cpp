@@ -15,11 +15,11 @@
 
 }
 
-::ProductProps::Watch::Dimensions::Dimensions()
-:   fLength(0), fWidth(0), fHeight(0)
-{
+// ::ProductProps::Watch::Dimensions::Dimensions()
+// :   fLength(0), fWidth(0), fHeight(0)
+// {
     
-}
+// }
 
 ::ProductProps::Watch::Dimensions::Dimensions(float _l, float _w, float _h)
 :   fLength(_l), fWidth(_w), fHeight(_h)
@@ -27,11 +27,11 @@
     
 }
 
-::ProductProps::Watch::Dimensions::Date::Date()
-:   usDay(0), sMonth("0"), usYear(0)
-{
+// ::ProductProps::Watch::Dimensions::Date::Date()
+// :   usDay(0), sMonth("0"), usYear(0)
+// {
 
-}
+// }
 
 ::ProductProps::Watch::Dimensions::Date::Date(unsigned short _d, std::string _m, unsigned short _y)
 :   usDay(_d), sMonth(_m), usYear(_y)
