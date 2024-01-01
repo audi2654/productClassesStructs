@@ -41,8 +41,6 @@ namespace ProductProps{
             Dimensions(float _l, float _w, float _h);
 
             friend std::ostream& operator<<(std::ostream& os, const Dimensions& resource);
-
-            //friend std::ostream& operator<<(std::ostream& os, const Date& resource);
         };
 
         Dimensions dimensionsOfProduct;

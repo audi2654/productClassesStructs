@@ -102,7 +102,9 @@ namespace ProductProps{
 
     std::ostream& operator<<(std::ostream& os, const Watch::Dimensions::Date& resource)
     {
-        os << resource.getDay() << "-" << resource.getMonth() << "-" << resource.getYear();
+        os << resource.getDay() << "-" << resource.getMonth() << "-" << resource.getYear() << " ";
+        os << resource.usDay << "-" << resource.sMonth << "-" << resource.usYear;
+
         return os;
     }
 }
