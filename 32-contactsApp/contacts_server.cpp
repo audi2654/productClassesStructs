@@ -72,10 +72,7 @@ void ::App::Music::showDetails() const
 {
     std::cout << "Inside Music::showDetails()" << std::endl;
 
-    std::cout << sMName << std::endl;
-    std::cout << uiMQuantity << std::endl;
-    std::cout << svecMCategories << std::endl;
-    std::cout << bMBackupAllowed << std::endl;
+    ::App::Application::showDetails();
 
     std::cout << std::endl;
 }
