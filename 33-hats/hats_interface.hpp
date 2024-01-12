@@ -15,7 +15,7 @@ namespace Accessory{
         public:
         Hats();
 
-        virtual void showDetails(std::string msg) const;
+        void showDetails(std::string msg) const;
 
         void setDetails
         (
@@ -47,7 +47,7 @@ namespace Accessory{
         public:
         BabyHat();
 
-        void showDetails(std::string msg) const override;
+        void showDetails(std::string msg) const;
     };
 }
 

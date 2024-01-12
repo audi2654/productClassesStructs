@@ -59,7 +59,12 @@ void ::Accessory::BabyHat::showDetails(std::string msg) const
 {
     std::cout << "Inside BabyHat::showDetails()" << std::endl;
 
-    ::Accessory::Hats::showDetails(msg);
+    //::Accessory::Hats::showDetails(msg);
+
+    std::cout << sName << std::endl;
+    std::cout << sSeason << std::endl;
+    std::cout << svecMaterial << std::endl;
+    std::cout << usAge << std::endl; 
 }
 
 void ::Accessory::Hats::showDetails(std::string msg) const
