@@ -17,6 +17,8 @@ int main(void){
 
     std::cout << std::endl;
 
+    //::Accessory::BabyHat* newHatP  = new ::Accessory::BabyHat;
+
     ::Accessory::Hats* newHatP  = new ::Accessory::BabyHat;
     //this is Base* = new DerivedObj case, but because in Base showDetails is not declared as virtual
     //call will always go to the base version of functions so Hats::showDetails() is called
@@ -31,5 +33,6 @@ int main(void){
         3
     );
 
+    //newHatP->Accessory::Hats::showDetails("Details of Baby Hat are");
     newHatP->showDetails("Details of Baby Hat are");
 }
