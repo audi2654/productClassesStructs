@@ -13,7 +13,7 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
     }
     else{
         for(size_t i = 0; i < vec.size(); ++i)
-            os << "(" << i << ")";
+            os << "(" << vec.at(i) << ")";
     }
     return os;
 };
@@ -35,6 +35,9 @@ void showDetails(const T& obj)
 namespace Tools{
     class Drill{
         private:
+        int iPrivate{0};
+
+        public:
         std::string sName;
         unsigned int uiPrice;
         unsigned short usRPM;
@@ -60,7 +63,9 @@ namespace Tools{
     };
 
     class StanleyDrill : public Drill{
-        private:
+        int iPrivate{0};
+
+        public:
         std::string sName;
         unsigned int uiPrice;
         unsigned short usRPM;
@@ -75,7 +80,9 @@ namespace Tools{
     };
 
     class BoschDrill : public Drill{
-        private:
+        int iPrivate{0};
+        
+        public:
         std::string sName;
         unsigned int uiPrice;
         unsigned short usRPM;
