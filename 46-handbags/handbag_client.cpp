@@ -3,7 +3,7 @@
 #include "handbag_interface.hpp"
 
 int main(void){
-    ::Handbag::CoinPurse* nP1 = ::Handbag::CoinPurse;
+    ::Handbag::CoinPurse* nP1 = new ::Handbag::CoinPurse;
 
     showDetails<::Handbag::Purse>(*nP1);
 
@@ -20,9 +20,9 @@ int main(void){
 
     std::cout << std::endl;
 
-    ::Handbag::Purse* nP2 = ::Handbag::ClutchPurse;
+    ::Handbag::ClutchPurse* nP2 = new ::Handbag::ClutchPurse;
 
-    showDetails<::Handbag::Purse>(*nP2);
+    showDetails<::Handbag::ClutchPurse>(*nP2);
 
     nP2->setDetails
     (
@@ -33,7 +33,7 @@ int main(void){
         {1.2, 3.22, 8.9}
     );
 
-    showDetails<::Handbag::Purse>(*nP2);
+    showDetails<::Handbag::ClutchPurse>(*nP2);
 
     return 0;
 }

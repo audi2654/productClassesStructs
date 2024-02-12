@@ -8,20 +8,22 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
 {
     if(std::is_same<T, std::string>::value)
     {
-        os << "[" << i << "]";
+        for(const auto& i : vec)
+            os << "[" << i << "]";
     }
     else
     {
         for(auto i = 0; i < vec.size(); i++)
         {
-            os << vec.at(i) << std::endl;
+            os << vec.at(i);
 
             if(i == vec.size() - 1)
                 return os;
             else
-                os << "x";
+                os << " x ";
         }
     }
+    return os;
 }
 
 template <typename T>
@@ -29,11 +31,11 @@ void showDetails(const T& obj)
 {
     std::cout << "Inside Templatized showDetails()" << std::endl;
 
-    std::cout << sName << std::endl;
-    std::cout << uiPrice << std::endl;
-    std::cout << sMaterial << std::endl;
-    std::cout << svecColor << std::endl;
-    std::cout << dvecDimensions << std::endl;
+    std::cout << obj.sName << std::endl;
+    std::cout << obj.uiPrice << std::endl;
+    std::cout << obj.sMaterial << std::endl;
+    std::cout << obj.svecColor << std::endl;
+    std::cout << obj.dvecDimensions << std::endl;
 
     std::cout << std::endl;
 }
